@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,11 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # an application that creates account for all anonymous users' requests and associates it with user session
-    'lazysignup',
-
     'pp',
+    # an application that creates account for all anonymous users' requests and associates it with user session
+    # 'lazysignup',
+
+
 ]
+
+# Set PPUser as Django user model
+AUTH_USER_MODEL = 'pp.User'
+
 
 # Lines below added based on http://django-lazysignup.readthedocs.io/en/latest/install.html#installation
 AUTHENTICATION_BACKENDS = (

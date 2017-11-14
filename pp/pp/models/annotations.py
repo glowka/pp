@@ -1,14 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
-import consts
-
-
-class PPUser(User):
-    pass
+from pp.pp import consts
 
 
 class Annotation(models.Model):
-    user = models.ForeignKey('PPUser')
+    user = models.ForeignKey('pp.User')
     create_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -41,7 +36,7 @@ class Reference(Annotation):
 
 
 class UserReferenceFeedback(models.Model):
-    user = models.ForeignKey('PPUser')
+    user = models.ForeignKey('pp.User')
     reference = models.ForeignKey(Reference)
 
     useful = models.BooleanField()
@@ -52,7 +47,7 @@ class UserReferenceFeedback(models.Model):
 
 
 class UserReferenceRequestFeedback(models.Model):
-    user = models.ForeignKey('PPUser')
+    user = models.ForeignKey('pp.User')
     reference_request = models.ForeignKey(ReferenceRequest)
 
     class Meta:
