@@ -16,11 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework.documentation import include_docs_urls
+from apps.pp.views import site_test
 
 import apps
 
 urlpatterns = [
-    url(r'^admin/',admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'^api/',include('apps.pp.urls')),
-    url(r'^api/docs/', include_docs_urls(title='My API title'))
+    url(r'^api/docs/', include_docs_urls(title='My API title')),
+    url(r'^site_test/', site_test.index)
 ]

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'lazysignup',
 
     # framework for creating api
-    'rest_framework',
+    # 'rest_framework',
 
     # Adds cross-origin headers to http request
     'corsheaders',
